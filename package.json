@@ -4,9 +4,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "localhost": "./node_modules/.bin/servor dist index.html 8080 --reload",
+    "ui-build": "./node_modules/.bin/rollup -c",
+    "ui-dev": "./node_modules/.bin/rollup -c -w & npm run localhost"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.1.0"
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^9.0.2",
+    "@tauri-apps/cli": "^1.1.0",
+    "rollup": "^3.2.5",
+    "servor": "^4.0.2",
+    "tslib": "^2.4.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.1.0",
+    "servor": "^4.0.2"
   }
 }
